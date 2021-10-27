@@ -40,13 +40,10 @@ namespace FindLongestSubArray
 
         static bool IsContignuousSubArray(int[] A, int [] B, int[] C)
         {
-            
-            if (B.Length > A.Length ||
-                B.Length > C.Length ||
-                !IsSubSetOf(B, C))
-            {
+
+            if (!IsSubSetOf(A, B, C)) {
                 return false;
-            }
+            };
 
             var flag = false;
             var count = 0;
@@ -80,8 +77,14 @@ namespace FindLongestSubArray
         }
 
         // check if one list is sub set of other
-        static bool IsSubSetOf(int[] B, int[] C)
-        {   
+        static bool IsSubSetOf(int[]A, int[] B, int[] C)
+        {
+            if (B.Length > A.Length ||
+                B.Length > C.Length )
+            {
+                return false;
+            }
+
             for (int b = 0; b < B.Length; b++)
             {
                 var flag = Array.Exists(C, c => c == B[b]);
