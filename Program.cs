@@ -12,32 +12,29 @@ namespace FindLongestSubArray
 
         static void RunApplication()
         {
+            // test 1
             var a = new int[] { 1, 1, 5, 1, 2 };
             var b = new int[] { 1, 2 };
             var c = new int[] { 2, 1 };
-            var x = IsContignuousSubArray(a, b, c);
+            PrintResult(IsContignuousSubArray(a, b, c));
 
-
-            Console.WriteLine((x) ? x.ToString()
-                                   : "No Match found \n" + x.ToString());
-
-
+            // test 2
             var a1 = new int[] { 11, 14, 1, 2, 17, 2, 11, 6, 11, 22, 14, 2, 17 };
             var b1 = new int[] { 11, 22, 14, 1 };
             var c1 = new int[] { 14, 22, 11, 1, 2 };
-            var x1 = IsContignuousSubArray(a1, b1, c1);
-            Console.WriteLine((x1) ? x1.ToString()
-                                   : "No Match found \n" + x1.ToString());
-
-
+            PrintResult(IsContignuousSubArray(a1, b1, c1));
+            
+            // test 3
             var a12 = new int[] { 11, 14, 1, 2, 17, 2, 11, 6, 11, 22, 14, 1, 2, 17 };
             var b12 = new int[] { 11, 22, 14, 1 };
             var c12 = new int[] { 14, 22, 11, 1 };
-            var x12 = IsContignuousSubArray(a12, b12, c12);
-            Console.WriteLine((x12) ? x12.ToString()
-                                   : "No Match found \n" + x12.ToString());
+            PrintResult(IsContignuousSubArray(a12, b12, c12));
 
-
+        }
+        static void PrintResult(bool x)
+        {
+            Console.WriteLine((x) ? x.ToString()
+                                  : "No Match found \n" + x.ToString());
         }
 
 
